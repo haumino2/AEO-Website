@@ -30,9 +30,9 @@ Edit `src/app.js` for the interface, bilingual copy and demo behavior, or `src/s
 1. Choose EN or VI
 2. Use example details or enter a website and email
 3. Accept the required Privacy Notice; newsletter consent is separate and starts unchecked
-4. Run the sample diagnostic and inspect the six signals
+4. Run the sample diagnostic, compare four sample websites and explore Strategy / Technical issues
 5. Open the email report preview
-6. Request a free 30-minute review with an illustrative time and language; name, company and country are optional
+6. Use a free-talk CTA to request a free 30-minute review with an illustrative time and language; name, company and country are optional
 7. In presentation mode, open Lead list to inspect source attribution, consent, booking details and sales status
 8. Try the timeout or daily-limit scenario from the lead workspace, then retry from the checker
 9. Reset demo data or refresh the page to start again
@@ -44,7 +44,15 @@ Edit `src/app.js` for the interface, bilingual copy and demo behavior, or `src/s
 - User-entered data exists only in the current page's memory; no browser storage is used
 - Different tabs or a reload start separate sessions; presentation mode keeps one embedded session across views
 - EN/VI covers the landing page, validation, results, email, booking, privacy notice and lead workspace
-- Actual AI mentions and competitor analysis belong to the paid audit, separate from the readiness check
-- Logo and font currently load from DSQUARE staging and Google Fonts
+- Comparison uses three fictional peers; actual AI mentions and competitive research belong to the paid audit
+- The original DSQUARE logo is embedded; Funnel Display and Google Sans load from Google Fonts
 
 For production, confirm the provider API contract, replace mock data, connect approved email/calendar/CRM services and review the privacy notice before launch
+
+## Current design and result flow
+
+DSQUARE dark/gold styling, responsive service comparison fields and a prefilled free-talk request form
+
+The report includes a four-site sample comparison, platform priorities, market/website-type controls and technical sub-checks
+
+See DSQUARE-RESTYLE.md and RESULTS-UPGRADE.md for implementation and verification details
