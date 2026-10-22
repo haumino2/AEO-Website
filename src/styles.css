@@ -28,6 +28,9 @@ header{border-bottom:0}.nav{min-height:128px;gap:24px}.logo{display:inline-flex;
 @media(max-width:899px){.hero{gap:36px}.checker-panel{max-width:720px}.hero .entry-form{margin-top:0}.hero h1{font-size:clamp(52px,8vw,76px)}}
 @media(max-width:599px){.hero{gap:28px}.hero h1{font-size:clamp(42px,11.4vw,64px)}.checker-panel{padding:24px}.checker-title{font-size:28px;margin-bottom:24px}.checker-panel .check-label{font-size:13px}.checker-panel .entry-form .primary{font-size:16px}}
 @media(max-width:359px){.hero h1{font-size:40px}.checker-panel{padding:20px}.checker-title{font-size:26px}}
+.customer-evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;align-content:center;min-width:0}.customer-stat{border-top:1px solid var(--stroke);padding-top:24px}.customer-stat strong{display:block;color:var(--action);font:400 clamp(64px,6vw,88px)/1 var(--display);letter-spacing:-.04em}.customer-stat p{font-size:18px;line-height:1.6;margin:20px 0 0;color:#fff}.evidence-source{grid-column:1 / -1;font-size:13px;line-height:1.7;color:var(--muted);margin:0}.evidence-source a{text-decoration:underline;text-underline-offset:4px}.evidence-source a:hover{color:#fff}
+@media(max-width:599px){.customer-evidence{gap:28px 24px}.customer-stat strong{font-size:64px}.customer-stat p{font-size:16px}.why-section h2{font-size:clamp(32px,9vw,40px)}}
+@media(max-width:359px){.customer-evidence{grid-template-columns:1fr}.evidence-source{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 /* Report / conversion flow, adapted from the supplied TOS screenshots */
