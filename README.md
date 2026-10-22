@@ -2,7 +2,7 @@
 
 Interactive EN/VI prototype for the DSQUARE GEO/AIO lead-generation flow
 
-Website + work email + consent → readiness report → email preview → free 30-minute expert review → internal lead list
+Website + work email + consent → Google SEO + AI readiness report → email preview → free 30-minute expert review → internal lead list
 
 ## Open the prototype
 
@@ -56,3 +56,14 @@ DSQUARE dark/gold styling, responsive service comparison fields and a prefilled 
 The report includes a four-site sample comparison, platform priorities, market/website-type controls and technical sub-checks
 
 See DSQUARE-RESTYLE.md and RESULTS-UPGRADE.md for implementation and verification details
+
+## Report categories
+
+- Google SEO basics: Technical, Structured Data, Content Extractability and E-E-A-T
+- AI readiness: AI Crawler Access and llms.txt
+
+The same grouping appears on the landing page, sample preview, results, technical details and email report, including mobile EN/VI
+
+Sample totals remain 48/70 + 14/30 = 62/100
+
+See GROUPING-UPDATE.md for mapping, scope and verification
