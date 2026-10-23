@@ -2,7 +2,7 @@
 
 Interactive EN/VI prototype for the DSQUARE GEO/AIO lead-generation flow
 
-Website + work email + consent → AI Visibility report with supporting SEO checks → email preview → free 30-minute expert review → internal lead list
+Website + work email + consent → AI Visibility readiness report → email preview → free 30-minute expert review → internal lead list
 
 ## Open the prototype
 
@@ -57,16 +57,14 @@ The report includes a four-site sample comparison, platform priorities, market/w
 
 See DSQUARE-RESTYLE.md and RESULTS-UPGRADE.md for implementation and verification details
 
-## Report categories
+## Report criteria
 
-- AI Visibility (primary): AI Crawler Access, Content Extractability, Structured Data, llms.txt
-- Google SEO basics (supporting): Technical, E-E-A-T
+AI Visibility is assessed across six website signals: AI Crawler Access, Content Extractability, Structured Data, E-E-A-T, Technical and llms.txt
 
-The same order appears on the landing page, preview, results, technical details and email report in EN/VI
+Content, structured data, E-E-A-T and technical checks also have a small SEO-support label
+There are no separate SEO/AI categories or subtotals
+The single fixed sample score remains 62/100
 
-Sample totals: AI Visibility 42/70 + SEO basics 20/30 = 62/100
-
-The landing FAQ section has been removed
-Name and company are required in the expert-review form, including rejection of whitespace-only values
-
-See GROUPING-UPDATE.md for mapping, scope and verification
+Name and company are required in the expert-review form; whitespace-only values are rejected
+The landing FAQ section is removed
+See GROUPING-UPDATE.md for scope

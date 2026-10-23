@@ -1,43 +1,18 @@
-# AI Visibility first
+# Unified AI Visibility framework
 
 Updated 23 October 2026
 
-## Shared grouping
+All six criteria now belong to one AI Visibility readiness report
+There is no separate SEO category or SEO subtotal
 
-- Primary: AI Visibility — AI Crawler Access, Content Extractability, Structured Data, llms.txt
-- Supporting: Google SEO basics — Technical, E-E-A-T
+Order: AI Crawler Access, Content Extractability, Structured Data, E-E-A-T, Technical, llms.txt
 
-The shared definition in signal-groups.js controls landing categories, sample preview, result scores, comparison headers and values, technical details and email report
-AI is presented first with stronger typography, gold emphasis and a wider desktop panel
-SEO is a supporting group
+Content Extractability, Structured Data, E-E-A-T and Technical carry a small “Also supports SEO” annotation
+This indicates overlapping benefits, not separate scoring
+llms.txt remains optional guidance
 
-## Scoring and scope
-
-Fixed sample values and original weights are preserved
-AI: 14 + 16 + 12 + 0 = 42/70
-SEO: 11 + 9 = 20/30
-Overall: 62/100
-
-These are overlapping website readiness signals, not measurements of AI mentions or Google rankings
-Structured data and readable content also support SEO; E-E-A-T also supports AI readiness
-The grouping is a presentation choice, not a new TOS scoring methodology
-llms.txt remains described as optional guidance
-No live scanning or backend integration has been added
-
-## Other changes
-
-- Removed the landing Q&A/FAQ section
-- Hero, report and audit copy prioritize AI Visibility
-- Name and company are required for the free 30-minute review request
-- Validation rejects empty and whitespace-only inputs, focuses the invalid field and announces its error
-- Country remains optional
-- EN/VI and the session-only demo flow are retained
-
-## Verification
-
-- Combined JavaScript syntax and standalone build checked
-- Browser: AI-first landing, result table and email grouping verified
-- Empty name, whitespace-only name, empty company and whitespace-only company rejected
-- Valid name/company plus a selected time reaches sample confirmation
-
-No appointment, email or external request is sent by the prototype
+All sample values and weights are unchanged: 62/100
+These are fixed website-readiness examples, not actual AI mentions or search rankings
+Landing, preview, results, comparison headers, technical details and email use the same definition and annotation helper in EN/VI
+The FAQ stays removed and Name/Company remain required in the expert-review form
+No live scanning, email delivery, booking or API integration is added
