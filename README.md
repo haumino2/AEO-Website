@@ -27,7 +27,7 @@ Edit `src/app.js` for the interface, bilingual copy and demo behavior, or `src/s
 
 ## Demo walkthrough
 
-1. Choose EN or VI
+1. Vietnamese opens by default; use VI / EN to switch to English
 2. Use example details or enter a website and email
 3. Accept the required Privacy Notice; newsletter consent is separate and starts unchecked
 4. Run the sample diagnostic, compare four sample websites and explore Strategy / Technical issues
