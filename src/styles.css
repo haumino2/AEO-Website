@@ -54,3 +54,19 @@ header{border-bottom:0}.nav{min-height:128px;gap:24px}.logo{display:inline-flex;
 @media(max-width:899px){.signal-group-grid{grid-template-columns:1fr;gap:24px}.category-heading{flex-direction:row;align-items:baseline}.category-description{max-width:none}.group-score-summary{grid-template-columns:1fr 1fr}.overall-readiness{grid-column:1 / -1;display:flex;align-items:baseline;gap:24px}.overall-readiness>span{margin:0}.overall-readiness strong{font-size:42px}.category-score{border-left:0;border-top:1px solid var(--stroke);padding:20px 0 0}.category-score strong{font-size:44px}.category-score>span{font-size:16px}.technical-category-heading h3{font-size:30px}}
 @media(max-width:599px){.signal-group-grid{margin-top:32px}.signal-category{padding:24px}.category-heading{flex-direction:column;gap:10px}.category-heading h3{font-size:29px}.category-description{font-size:16px;margin:16px 0 24px}.landing-signal summary{font-size:21px;gap:12px}.landing-signal p{font-size:15px}.group-score-summary{gap:20px;margin-bottom:28px;padding-bottom:28px}.overall-readiness{gap:18px;justify-content:space-between}.overall-readiness strong{font-size:40px}.overall-readiness>span{font-size:16px}.category-score strong{font-size:40px}.category-score small{font-size:17px}.category-score>span{font-size:16px;min-height:48px;margin-bottom:12px}.category-score p{font-size:13px}.preview-group-heading h4{font-size:19px}.preview-group-heading>b{font-size:14px}.preview-group .preview-row{font-size:13px}.technical-category-heading{align-items:flex-start;gap:16px}.technical-category-heading h3{font-size:28px}.technical-category-heading>span{font-size:19px}.technical-category>.small{font-size:14px}.comparison-table .pillar-head th{position:static!important;left:auto!important;z-index:auto!important}.email-paper .preview-group-heading{flex-wrap:wrap;gap:8px}.email-paper .preview-group-heading h4{font-size:20px}}
 @media(max-width:359px){.signal-category{padding:20px}.category-heading h3{font-size:27px}.landing-signal summary{font-size:19px}.category-score strong{font-size:36px}.category-score small{font-size:16px}.technical-category-heading h3{font-size:25px}}
+/* AI Visibility is the primary offer; SEO supports it */
+.signal-group-grid{grid-template-columns:1.3fr 1fr}
+.signal-category[data-category=ai]{border-color:#ffaf1470;background:var(--panel)}
+.signal-category[data-category=ai] .category-heading h3{color:var(--action);font-size:36px}
+.signal-category[data-category=seo] .category-heading h3{font-size:28px}
+.signal-category[data-category=seo] .category-heading>span{color:var(--muted)}
+.group-score-summary{grid-template-columns:.7fr 1.2fr 1fr}
+.category-score[data-category=ai] strong{color:var(--action)}
+.category-score[data-category=seo]>span{color:var(--muted)}
+.category-score[data-category=seo] strong{font-size:44px}
+.preview-group[data-category=seo] .preview-group-heading>b{color:var(--muted)}
+.email-paper .preview-group[data-category=seo] .preview-group-heading>b{color:#555}
+.comparison-table .comparison-group-head th:last-child{color:var(--muted)}
+.technical-category[data-category=ai] .technical-category-heading h3{color:var(--action)}
+@media(max-width:899px){.signal-group-grid{grid-template-columns:1fr}.group-score-summary{grid-template-columns:1fr 1fr}.category-score[data-category=seo] strong{font-size:40px}}
+@media(max-width:599px){.signal-category[data-category=ai] .category-heading h3{font-size:32px}.signal-category[data-category=seo] .category-heading h3{font-size:27px}}

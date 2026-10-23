@@ -1,55 +1,43 @@
-# Google SEO basics + AI readiness
+# AI Visibility first
 
-Approved prototype grouping, implemented22 October2026
+Updated 23 October 2026
 
-## Shared category definition
+## Shared grouping
 
-Google SEO basics: Technical, Structured Data, Content Extractability, E-E-A-T
-AI readiness: AI Crawler Access, llms.txt
+- Primary: AI Visibility — AI Crawler Access, Content Extractability, Structured Data, llms.txt
+- Supporting: Google SEO basics — Technical, E-E-A-T
 
-One definition in signal-groups.js controls the landing page, sample preview, result summary, comparison-table column order, technical details and email report
-The presentation grouping does not change the underlying six-signal sample scoring
-Existing weights and totals are retained
+The shared definition in signal-groups.js controls landing categories, sample preview, result scores, comparison headers and values, technical details and email report
+AI is presented first with stronger typography, gold emphasis and a wider desktop panel
+SEO is a supporting group
 
-- Google SEO basics:48/70
-- AI readiness:14/30
-- Overall:62/100
+## Scoring and scope
 
-The scores describe sample website readiness, not actual Google rankings, traffic or AI mentions
-SEO foundations also support AI search; the groups are not independent vendor certification systems
-llms.txt is described as optional guidance, not a required condition for search visibility
+Fixed sample values and original weights are preserved
+AI: 14 + 16 + 12 + 0 = 42/70
+SEO: 11 + 9 = 20/30
+Overall: 62/100
 
-## UI changes
+These are overlapping website readiness signals, not measurements of AI mentions or Google rankings
+Structured data and readable content also support SEO; E-E-A-T also supports AI readiness
+The grouping is a presentation choice, not a new TOS scoring methodology
+llms.txt remains described as optional guidance
+No live scanning or backend integration has been added
 
-- Hero now includes Google and AI search
-- Landing shows two category panels with four and two signal disclosures
-- Mobile renders disclosures collapsed initially; each can be opened independently
-- Result shows overall readiness and two category scores
-- Comparison has grouped column headers, with the underlying values reordered by the same index mapping
-- Technical issues has two sections with their corresponding signal checks and subtotals
-- Email shows overall score, two category sections, all six signals and a next action per category
-- Free-talk CTA and prefilled report context are preserved
-- Paid audit and implementation copy now includes Google SEO
-- EN/VI is included across these changes
+## Other changes
 
-## Build
-
-build-upgrade.mjs combines signal-groups.js before results-ui.js inside the existing app closure
-Styles include signal-groups.css after the existing component and DSQUARE layers
-The publication folder contains the same compiled JS/CSS and standalone HTML
+- Removed the landing Q&A/FAQ section
+- Hero, report and audit copy prioritize AI Visibility
+- Name and company are required for the free 30-minute review request
+- Validation rejects empty and whitespace-only inputs, focuses the invalid field and announces its error
+- Country remains optional
+- EN/VI and the session-only demo flow are retained
 
 ## Verification
 
-- Desktop1280px: category panels,48/70 and14/30 summaries, grouped comparison headers
-- Comparison order: Technical / Structured Data / Content Extractability / E-E-A-T / AI Crawler Access / llms.txt
-- Own-site values:11 /12 /16 /9 /14 /0, summing to62
-- All four comparison totals checked against their six displayed values
-- Technical detail sub-checks checked against the corresponding signal scores and maxima
-- Email contains exactly two categories with four and two rows and matching scores
-- VI390px: two stacked categories, initially collapsed disclosures, working expansion
-- VI320px: no document overflow; email content fits its scrollable dialog
-- Email-to-free-talk button preserves website and email context
-- Combined JS syntax and both standalone builds checked
+- Combined JavaScript syntax and standalone build checked
+- Browser: AI-first landing, result table and email grouping verified
+- Empty name, whitespace-only name, empty company and whitespace-only company rejected
+- Valid name/company plus a selected time reaches sample confirmation
 
-Screenshots: group-preview/
-Prototype only; no backend integrations were introduced
+No appointment, email or external request is sent by the prototype

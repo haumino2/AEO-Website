@@ -2,7 +2,7 @@
 
 Interactive EN/VI prototype for the DSQUARE GEO/AIO lead-generation flow
 
-Website + work email + consent → Google SEO + AI readiness report → email preview → free 30-minute expert review → internal lead list
+Website + work email + consent → AI Visibility report with supporting SEO checks → email preview → free 30-minute expert review → internal lead list
 
 ## Open the prototype
 
@@ -32,7 +32,7 @@ Edit `src/app.js` for the interface, bilingual copy and demo behavior, or `src/s
 3. Accept the required Privacy Notice; newsletter consent is separate and starts unchecked
 4. Run the sample diagnostic, compare four sample websites and explore Strategy / Technical issues
 5. Open the email report preview
-6. Use a free-talk CTA to request a free 30-minute review with an illustrative time and language; name, company and country are optional
+6. Use a free-talk CTA to request a free 30-minute review with an illustrative time and language; name and company are required; country is optional
 7. In presentation mode, open Lead list to inspect source attribution, consent, booking details and sales status
 8. Try the timeout or daily-limit scenario from the lead workspace, then retry from the checker
 9. Reset demo data or refresh the page to start again
@@ -59,11 +59,14 @@ See DSQUARE-RESTYLE.md and RESULTS-UPGRADE.md for implementation and verificatio
 
 ## Report categories
 
-- Google SEO basics: Technical, Structured Data, Content Extractability and E-E-A-T
-- AI readiness: AI Crawler Access and llms.txt
+- AI Visibility (primary): AI Crawler Access, Content Extractability, Structured Data, llms.txt
+- Google SEO basics (supporting): Technical, E-E-A-T
 
-The same grouping appears on the landing page, sample preview, results, technical details and email report, including mobile EN/VI
+The same order appears on the landing page, preview, results, technical details and email report in EN/VI
 
-Sample totals remain 48/70 + 14/30 = 62/100
+Sample totals: AI Visibility 42/70 + SEO basics 20/30 = 62/100
+
+The landing FAQ section has been removed
+Name and company are required in the expert-review form, including rejection of whitespace-only values
 
 See GROUPING-UPDATE.md for mapping, scope and verification
