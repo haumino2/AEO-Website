@@ -51,7 +51,7 @@ For production, confirm the provider API contract, replace mock data, connect ap
 
 ## Current design and result flow
 
-DSQUARE dark/gold styling, responsive service comparison fields and a prefilled free-talk request form
+DSQUARE white/navy/cyan styling, responsive service comparison fields and a prefilled free-talk request form
 
 The report includes a four-site sample comparison, platform priorities, market/website-type controls and technical sub-checks
 
@@ -68,3 +68,6 @@ The single fixed sample score remains 62/100
 Name and company are required in the expert-review form; whitespace-only values are rejected
 The landing FAQ section is removed
 See GROUPING-UPDATE.md for scope
+
+
+See FEEDBACK-OCT29.md for the current white design, static build, production presentation flag and integration boundaries
