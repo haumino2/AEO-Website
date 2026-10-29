@@ -51,7 +51,7 @@ For production, confirm the provider API contract, replace mock data, connect ap
 
 ## Current design and result flow
 
-DSQUARE black/charcoal/gold styling, responsive service comparison fields and a prefilled free-talk request form
+DSQUARE black/charcoal/gold page with light input, score/results, sample report and review booking cards; responsive service fields and a prefilled review request form
 
 The report includes a four-site sample comparison, platform priorities, market/website-type controls and technical sub-checks
 
