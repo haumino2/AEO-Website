@@ -14,5 +14,5 @@ llms.txt remains optional guidance
 All sample values and weights are unchanged: 62/100
 These are fixed website-readiness examples, not actual AI mentions or search rankings
 Landing, preview, results, comparison headers, technical details and email use the same definition and annotation helper in EN/VI
-The FAQ stays removed and Name/Company remain required in the expert-review form
+The Q&A is restored as five EN/VI accordions; Name/Company remain required in the expert-review form
 No live scanning, email delivery, booking or API integration is added
