@@ -45,7 +45,7 @@ Edit `src/app.js` for the interface, bilingual copy and demo behavior, or `src/s
 - Different tabs or a reload start separate sessions; presentation mode keeps one embedded session across views
 - EN/VI covers the landing page, validation, results, email, booking, privacy notice and lead workspace
 - Comparison uses three fictional peers; actual AI mentions and competitive research belong to the paid audit
-- The original DSQUARE logo is embedded; Funnel Display and Google Sans load from Google Fonts
+- The original DSQUARE logo is embedded; Funnel Display and Google Sans are served as local WOFF2 files with their OFL licenses
 
 For production, confirm the provider API contract, replace mock data, connect approved email/calendar/CRM services and review the privacy notice before launch
 
@@ -71,3 +71,5 @@ See GROUPING-UPDATE.md for scope
 
 
 See FEEDBACK-OCT29.md for the current white design, static build, production presentation flag and integration boundaries
+
+See TYPOGRAPHY-POLISH.md for the restored typography and current palette refinements
