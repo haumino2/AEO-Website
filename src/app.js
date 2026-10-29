@@ -102,7 +102,7 @@ const signalNames=[
 signalGroups[0].indices=[0,1,3,2,4,5];
 groupedSignalIndexes.splice(0,groupedSignalIndexes.length,...signalGroups[0].indices);
 seoSharedSignals.delete(3);
-function businessSignal(i,tooltip=true){return `<span class="business-signal">${tr(signalNames[i])}<small>${signals[i].name[0]}</small></span>${tooltip?`<span class="help-tip" tabindex="0" aria-label="${esc(tr(signals[i].desc))}"><span aria-hidden="true">?</span><span class="tip-content" role="tooltip">${tr(signals[i].desc)}</span></span>`:''}`}
+function businessSignal(i,tooltip=true){return `<span class="business-signal">${tr(signalNames[i])}<small>${signals[i].name[0]}</small></span>${tooltip?`<span class="help-tip" role="img" tabindex="0" aria-label="${esc(tr(signals[i].desc))}"><span aria-hidden="true">?</span><span class="tip-content" role="tooltip">${tr(signals[i].desc)}</span></span>`:''}`}
 signalGroupsLanding=()=>`<section class="section" id="checks"><div class="eyebrow">${t('sixLabel')}</div><h2>${t('sixTitle')}</h2><p class="lead">${t('sixBody')}</p><div class="ai-signal-grid">${groupedSignalIndexes.map(i=>`<article class="ai-signal-card"><div class="signal-card-heading">${businessSignal(i)}</div>${seoLabel(i)}<p>${tr(signals[i].desc)}</p></article>`).join('')}</div></section>`;
 const previousRows=groupedSignalRows;
 groupedSignalRows=()=>previousRows().replace(/<span>([^<]+)(<span class="seo-support">|<\/span>)/g,(all,name,end)=>{const i=signals.findIndex(s=>tr(s.name)===name);return i<0?all:`<span>${businessSignal(i,false)}${end}`});

@@ -115,6 +115,7 @@ header{background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:80px}
 .check-label .text-button,.service-table .text-button,.service-table tbody th,.comparison-table tbody th,.check-count b,.platform-next p,.customer-stat p,.metric .fix,select.text,td select{color:#13203f}
 select.text,td select{background:#fff}select.text option{background:#fff;color:#13203f}
 .hero-copy .operator{font-size:14px;line-height:1.5;margin:24px 0 12px}.hero-copy .hero-explainer{font-size:14px;line-height:1.6;margin:0}
+.last-cta .outline{color:#13203f;background:#fff;border-color:#8490a5}.last-cta .outline:hover{color:#13203f;background:#e5f7ff}
 .footerline a:hover,.footerline button:hover{color:#006d99}.email-paper .primary:hover{background:#51caff;color:#13203f;border-color:#51caff}
 @media(max-width:599px){.hero-copy .operator{font-size:11px;margin:8px 0 6px}.hero-copy .hero-explainer{font-size:11px;line-height:1.4}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
