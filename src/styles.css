@@ -239,3 +239,23 @@ header{background:#050505;border-color:#252529}.nav-links,.lang button{color:#de
 .modal.booking-dialog .modal-top .eyebrow{color:#52627b}.modal.booking-dialog .close{background:#e8edf3;color:#13203f;border-color:#c4cedb}.modal.booking-dialog .context{background:#eef2f6;border-color:#d5dae3;color:#13203f;padding:16px;border-radius:10px}.modal.booking-dialog .context p{color:#13203f}.modal.booking-dialog fieldset{border-color:#c6d1dd}.modal.booking-dialog .slot{background:#fff;border-color:#aebdce;color:#13203f}.modal.booking-dialog .slot:has(input:checked){background:#fff0ce;border-color:#b97c0a;color:#674200}
 :is(.checker-panel,.modal.booking-dialog) .error{color:#a32232}
 @media(max-width:599px){.report-comparison{padding:24px 16px;border-radius:16px}#panel-technical{padding:24px 18px;border-radius:16px}.modal.booking-dialog{background:#f7f8fa;border:0}.report-comparison .comparison-table tbody th{color:#13203f}}
+
+/* Scoped presenter layer; absent in normal mode */
+.review-target{position:relative}
+.review-target:hover,.review-target:focus-within{outline:1px dashed #ffaf14;outline-offset:5px}
+.review-note{position:absolute;top:5px;right:5px;z-index:40;font:500 12px/1.4 'Google Sans',sans-serif;letter-spacing:normal;text-transform:none;color:#13203f;padding:0;margin:0;border:0;background:transparent}
+.review-note>summary{display:block;font:600 11px/1.5 'Google Sans',sans-serif;list-style:none;cursor:pointer;background:#ffdf91;color:#13203f;border:1px solid #b47b0f;border-radius:6px;padding:6px 9px;box-shadow:0 2px 10px #0002;opacity:0;transition:opacity .15s;max-width:min(330px,85vw);min-height:0}
+.review-note>summary::-webkit-details-marker{display:none}
+.review-target:hover>.review-note>summary,.review-target:focus-within>.review-note>summary,.review-note[open]>summary{opacity:1}
+.review-note>summary:focus-visible{outline:3px solid #0083cd;outline-offset:3px;opacity:1}
+.review-note[open]{z-index:120}
+.review-note-panel{position:absolute;right:0;top:calc(100% + 6px);width:min(370px,calc(100vw - 42px));max-height:55vh;overflow:auto;overscroll-behavior:contain;background:#fff;color:#13203f;border:1px solid #d5dae3;box-shadow:0 12px 40px #0005;border-radius:10px;padding:18px;text-align:left}
+.review-note-panel .review-note-intro{font-size:11px;color:#5b6476;margin:0 0 12px}
+.review-note-panel article+article{border-top:1px solid #d5dae3;margin-top:16px;padding-top:16px}
+.review-note-panel h4{font:600 15px/1.4 'Google Sans',sans-serif;color:#13203f;margin:0 0 10px}
+.review-note-panel dl{margin:0}.review-note-panel dt{font-size:11px;font-weight:700;color:#38604a;margin-top:10px}.review-note-panel dd{font-size:13px;line-height:1.55;margin:3px 0 0;color:#334155}.review-note-panel dt.review-pending{color:#8b5500}
+.review-booking-marker{height:38px;margin:8px 0;z-index:130}.review-booking-marker>.review-note>summary{opacity:1}
+.booking-dialog .review-booking-marker .review-note-panel{top:auto;bottom:calc(100% + 8px);max-height:38vh}
+.review-dock{position:fixed;bottom:14px;left:14px;z-index:150;display:flex;align-items:center;gap:12px;background:#ffdf91;color:#13203f;border:1px solid #b47b0f;border-radius:8px;padding:10px 14px;font:500 12px/1.4 'Google Sans',sans-serif;box-shadow:0 4px 18px #0003}.review-dock a{color:#13203f;text-decoration:underline}.review-dock b{font-weight:700}
+@media(hover:none),(max-width:700px){.review-note>summary{opacity:1}.review-note{top:2px;right:2px}.review-dock{bottom:auto;top:5px;left:50%;transform:translateX(-50%);white-space:nowrap}.review-dock span{display:none}.review-target{padding-top:38px!important}.review-target.nav{margin-top:40px}.review-booking-marker{padding-top:0!important}.review-note-panel{max-height:48vh}}
+@media(prefers-reduced-motion:reduce){.review-note>summary{transition:none}}
