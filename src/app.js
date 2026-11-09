@@ -182,10 +182,29 @@ const previousEntry=entry;
 entry=()=>previousEntry().replace(/<div class="entry-foot">[\s\S]*?<\/div><\/form>$/,`<p class="form-microcopy">${tr(['Free · About 30 seconds · Full report sent by email','Miễn phí · Khoảng 30 giây · Báo cáo đầy đủ qua email'])}</p><div class="entry-foot"><a class="sample-jump" href="#sample-report">${tr(['Explore the sample report','Khám phá báo cáo mẫu'])}<span aria-hidden="true"> ↓</span></a>${productionMode?'':`<button class="text-button" type="button" data-action="example"${attr(state.busy,'disabled')}>${t('example')}</button>`}</div></form>`);
 whySection=()=>`<section class="section split why-section" id="why"><div><div class="eyebrow">${t('whyLabel')}</div><h2>${t('whyTitle')}</h2><p class="lead">${t('whyBody')}</p></div><div class="customer-evidence"><div class="customer-stat"><strong>58%</strong><p>${tr(['of consumers have replaced traditional search engines with Gen AI tools for product and service recommendations','người tiêu dùng đã thay công cụ tìm kiếm truyền thống bằng Gen AI để tìm gợi ý sản phẩm và dịch vụ'])}</p></div><div class="customer-stat"><strong>~75%</strong><p>${tr(['are open to Gen AI recommendations','sẵn sàng tiếp nhận gợi ý từ Gen AI'])}</p></div><p class="evidence-source">Capgemini Research Institute, What matters to today’s consumer 2025<br>${tr(['12,000 consumers, 12 countries','12.000 người tiêu dùng, 12 quốc gia'])}</p></div></section>`;
 const previousMain=main;
+let signalMotionPaused=false;
+function signalMotionLabel(){
+ return signalMotionPaused?tr(['Play motion','Chạy hiệu ứng']):tr(['Pause motion','Dừng hiệu ứng']);
+}
+function heroSignalVisual(){
+ const traces=groupedSignalIndexes.map((_,index)=>{
+  const y=14+index*18;
+  const path=`M 20 ${y} H 172 C 242 ${y}, 245 59, 318 59 H 446`;
+  return `<path class="signal-trace" d="${path}"/><path class="signal-packet" pathLength="1" d="${path}" style="--phase:${index*160}ms"/><circle cx="20" cy="${y}" r="3"/>`;
+ }).join('');
+ return `<div class="hero-signals"${signalMotionPaused?' data-motion-paused':''}><div class="hero-signals-label"><span>${tr(['6 website signals','6 tín hiệu website'])}</span><button type="button" class="signal-motion-toggle" data-signal-motion>${signalMotionLabel()}</button></div><svg aria-hidden="true" viewBox="0 0 470 118" fill="none">${traces}<circle class="signal-hub-ring" cx="446" cy="59" r="13"/><circle class="signal-hub" cx="446" cy="59" r="4"/></svg></div>`;
+}
+app.addEventListener('click',event=>{
+ const toggle=event.target.closest('[data-signal-motion]');
+ if(!toggle)return;
+ signalMotionPaused=!signalMotionPaused;
+ toggle.closest('.hero-signals').toggleAttribute('data-motion-paused',signalMotionPaused);
+ toggle.textContent=signalMotionLabel();
+});
 main=()=>{
  if(state.current)return `<main id="main" class="wrap result-page"><h1 class="sr-only">${t('resultRegion')}</h1>${result()}</main>`;
  const explainer=tr(['We read your website’s public signals. We do not send questions to ChatGPT or other AI assistants','Chúng tôi kiểm tra tín hiệu công khai trên website, không gửi câu hỏi tới ChatGPT hay trợ lý AI khác']);
- const firstView=`<section class="hero"><div class="hero-copy"><h1>AI Visibility Checker</h1><p class="muted">${tr(['Is your website visible to AI search?','Website của bạn có được AI tìm thấy?'])}</p></div><div class="checker-panel">${entry()}<p class="hero-explainer">${explainer}</p></div></section>`;
+ const firstView=`<section class="hero"><div class="hero-copy"><h1>AI Visibility Checker</h1><p class="muted">${tr(['Is your website visible to AI search?','Website của bạn có được AI tìm thấy?'])}</p><div class="hero-mobile-sweep" aria-hidden="true"></div>${heroSignalVisual()}</div><div class="checker-panel">${entry()}<p class="hero-explainer">${explainer}</p></div></section>`;
  const metrics=`<div class="number-strip" aria-label="${tr(['Report at a glance','Tổng quan báo cáo'])}"><span><b>6</b> ${tr(['AI readiness checks','tiêu chí sẵn sàng cho AI'])}</span><span><b>3</b> ${tr(['competitors compared','đối thủ được so sánh'])}</span><span>${tr(['About','Khoảng'])} <b>30</b> ${tr(['seconds','giây'])}</span></div>`;
  return previousMain().replace(/<section class="hero">[\s\S]*?<\/section>/,()=>firstView+metrics)
   .replace('<section class="section sample-layout">','<section class="section sample-layout" id="sample-report">')
@@ -208,6 +227,7 @@ const siteBase=appScript?new URL('../',appScript.src).pathname:location.pathname
 const basePath=()=>siteBase;
 const previousRender=render;
 let landingObserver;
+let landingMotionObserver;
 function syncLandingLanguage(){
  if(location.protocol!=='file:'&&!state.current&&route()==='main'){
   history.replaceState(null,'',basePath()+state.lang+'/'+location.search+location.hash);
@@ -222,6 +242,7 @@ render=()=>{
 };
 function observeLandingCTA(){
  landingObserver?.disconnect();
+ landingMotionObserver?.disconnect();
  const form=$('entry-form');
  const bar=app.querySelector?.('.landing-sticky');
  if(form&&bar&&typeof IntersectionObserver!=='undefined'){
@@ -229,6 +250,24 @@ function observeLandingCTA(){
    bar.hidden=entry.isIntersecting||entry.boundingClientRect.bottom>0;
   });
   landingObserver.observe(form);
+ }
+ if(!form||typeof IntersectionObserver==='undefined'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const visual=app.querySelector('.hero-signals');
+ const sections=app.querySelectorAll('.why-section, #checks, #sample-report, #services, #faq');
+ const motionObserver=new IntersectionObserver(entries=>{
+  for(const entry of entries){
+   if(entry.target===visual){
+    visual.toggleAttribute('data-in-view',entry.isIntersecting);
+   }else if(entry.isIntersecting){
+    entry.target.classList.add('section-entered');
+    motionObserver.unobserve(entry.target);
+   }
+  }
+ },{threshold:.08});
+ landingMotionObserver=motionObserver;
+ if(visual)motionObserver.observe(visual);
+ for(const section of sections){
+  if(section.getBoundingClientRect().top>=window.innerHeight)motionObserver.observe(section);
  }
 }
 const previousDialog=renderDialog;
