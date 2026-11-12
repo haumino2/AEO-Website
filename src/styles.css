@@ -282,6 +282,7 @@ header{background:#050505;border-color:#252529}.nav-links,.lang button{color:#de
 .sample-jump { display: inline-flex; align-items: center; gap: 5px; min-height: 36px; color: #633e00; font: 600 14px/1.35 var(--body); text-decoration: underline; text-underline-offset: 3px; }
 .sample-jump:hover { color: #965900; }
 #sample-report { scroll-margin-top: 16px; }
+.sample-email-action { min-height: 44px; font-size: 16px; }
 .sample-interactive .score { border: 0; background: conic-gradient(#e99d12 var(--sample-score), #e3e9ef 0); }
 .sample-interactive .score::before { background: #fff; }
 .sample-interactive .sample-hint { margin: 0 0 10px; color: #52627b; font-size: 15px; }
